@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.team5.cocktailturner.R;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +24,10 @@ public class SeasoningThirdFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private static ArrayList<String> liquidData;
+
+    private static ArrayList<String> randomIngredientsData;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -62,6 +68,14 @@ public class SeasoningThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            liquidData = bundle.getStringArrayList("liquidData");
+            randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            //todo remove
+            System.out.println("leeel3 " + liquidData);
+            System.out.println("leeel3 " + randomIngredientsData);
+        }
         return inflater.inflate(R.layout.fragment_seasoning_third, container, false);
     }
 }

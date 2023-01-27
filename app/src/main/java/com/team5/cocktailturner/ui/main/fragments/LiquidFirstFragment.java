@@ -85,7 +85,6 @@ public class LiquidFirstFragment extends Fragment {
                 String name = getActivity().getPackageName();
                 ArrayList<String> liquidData = new ArrayList<>();
                 for (int i = 1; i< 7; i++) {
-
                     EditText liquidIngredient = view.findViewById(r.getIdentifier("liquid" + i, "id", name));
                     String liquidText = String.valueOf(liquidIngredient.getText());
                     if (StringUtils.isNotEmpty(liquidText)) {
@@ -93,11 +92,10 @@ public class LiquidFirstFragment extends Fragment {
                     }
                 }
 
-
                 Fragment randomIngredientSecondFragment = new RandomIngredientSecondFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
-                arguments.putStringArrayList( "data" , liquidData);
+                arguments.putStringArrayList( "liquidData" , liquidData);
                 randomIngredientSecondFragment.setArguments(arguments);
                 transaction.replace(R.id.container, randomIngredientSecondFragment );
                 transaction.addToBackStack(null);
