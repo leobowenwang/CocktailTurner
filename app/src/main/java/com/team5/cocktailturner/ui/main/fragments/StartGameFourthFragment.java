@@ -10,12 +10,14 @@ import android.view.ViewGroup;
 
 import com.team5.cocktailturner.R;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link StartGameFifthFragment#newInstance} factory method to
+ * Use the {@link StartGameFourthFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class StartGameFifthFragment extends Fragment {
+public class StartGameFourthFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +28,15 @@ public class StartGameFifthFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public StartGameFifthFragment() {
+
+    private static ArrayList<String> liquidData;
+
+    private static ArrayList<String> randomIngredientsData;
+
+    private static ArrayList<String> seasoningData;
+
+
+    public StartGameFourthFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +49,8 @@ public class StartGameFifthFragment extends Fragment {
      * @return A new instance of fragment StartGameFifthFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static StartGameFifthFragment newInstance(String param1, String param2) {
-        StartGameFifthFragment fragment = new StartGameFifthFragment();
+    public static StartGameFourthFragment newInstance(String param1, String param2) {
+        StartGameFourthFragment fragment = new StartGameFourthFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,7 +70,16 @@ public class StartGameFifthFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_startgame_fifth, container, false);
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            liquidData = bundle.getStringArrayList("liquidData");
+            randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            seasoningData = bundle.getStringArrayList("seasoningData");
+            //todo remove
+            System.out.println("leeel4 " + liquidData);
+            System.out.println("leeel4 " + randomIngredientsData);
+            System.out.println("leeel4 " + seasoningData);
+        }
+        return inflater.inflate(R.layout.fragment_startgame_fourth, container, false);
     }
 }

@@ -12,10 +12,10 @@ import com.team5.cocktailturner.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ShowCocktailEighthFragment#newInstance} factory method to
+ * Use the {@link BottleFifthFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ShowCocktailEighthFragment extends Fragment {
+public class BottleFifthFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class ShowCocktailEighthFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ShowCocktailEighthFragment() {
+    public BottleFifthFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class ShowCocktailEighthFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ShowCocktailEighthFragment.
+     * @return A new instance of fragment BottleSixthFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ShowCocktailEighthFragment newInstance(String param1, String param2) {
-        ShowCocktailEighthFragment fragment = new ShowCocktailEighthFragment();
+    public static BottleFifthFragment newInstance(String param1, String param2) {
+        BottleFifthFragment fragment = new BottleFifthFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class ShowCocktailEighthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_showcocktail_eighth, container, false);
+        return inflater.inflate(R.layout.fragment_bottle_fifth, container, false);
     }
 }

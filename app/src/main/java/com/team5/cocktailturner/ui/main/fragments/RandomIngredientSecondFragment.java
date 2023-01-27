@@ -92,9 +92,9 @@ public class RandomIngredientSecondFragment extends Fragment {
                 ArrayList<String> randomIngredientsData = new ArrayList<>();
                 for (int i = 1; i< 7; i++) {
                     EditText randomIngredient = view.findViewById(r.getIdentifier("randomIngredient" + i, "id", name));
-                    String liquidText = String.valueOf(randomIngredient.getText());
-                    if (StringUtils.isNotEmpty(liquidText)) {
-                        randomIngredientsData.add(liquidText);
+                    String randomIngredientText = String.valueOf(randomIngredient.getText());
+                    if (StringUtils.isNotEmpty(randomIngredientText)) {
+                        randomIngredientsData.add(randomIngredientText);
                     }
                 }
 

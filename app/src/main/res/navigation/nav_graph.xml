@@ -30,18 +30,18 @@
     </fragment>
     <fragment
         android:id="@+id/startGameFifthFragment"
-        android:name="com.team5.cocktailturner.ui.main.fragments.StartGameFifthFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.StartGameFourthFragment"
         android:label="fragment_startgame_fifth"
-        tools:layout="@layout/fragment_startgame_fifth" >
+        tools:layout="@layout/fragment_startgame_fourth" >
         <action
             android:id="@+id/action_startGameFifthFragment_to_bottleSixthFragment"
             app:destination="@id/bottleSixthFragment" />
     </fragment>
     <fragment
         android:id="@+id/mixCocktailSeventhFragment"
-        android:name="com.team5.cocktailturner.ui.main.fragments.MixCocktailSeventhFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.MixCocktailSixthFragment"
         android:label="fragment_mixcocktail_seventh"
-        tools:layout="@layout/fragment_mixcocktail_seventh" >
+        tools:layout="@layout/fragment_mixcocktail_sixth" >
         <action
             android:id="@+id/action_mixCocktailSeventhFragment_to_showCocktailEighthFragment"
             app:destination="@id/showCocktailEighthFragment" />
@@ -51,9 +51,9 @@
     </fragment>
     <fragment
         android:id="@+id/bottleSixthFragment"
-        android:name="com.team5.cocktailturner.ui.main.fragments.BottleSixthFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.BottleFifthFragment"
         android:label="fragment_bottle_sixth"
-        tools:layout="@layout/fragment_bottle_sixth" >
+        tools:layout="@layout/fragment_bottle_fifth" >
         <action
             android:id="@+id/action_bottleSixthFragment_to_mixCocktailSeventhFragment"
             app:destination="@id/mixCocktailSeventhFragment" />
@@ -69,9 +69,9 @@
     </fragment>
     <fragment
         android:id="@+id/showCocktailEighthFragment"
-        android:name="com.team5.cocktailturner.ui.main.fragments.ShowCocktailEighthFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.ShowCocktailSeventhFragment"
         android:label="fragment_showcocktail_eighth"
-        tools:layout="@layout/fragment_showcocktail_eighth" />
+        tools:layout="@layout/fragment_showcocktail_seventh" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.team5.cocktailturner.ui.main.fragments.MainFragment"

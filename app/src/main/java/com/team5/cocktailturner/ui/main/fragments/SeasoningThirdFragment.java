@@ -1,14 +1,21 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.team5.cocktailturner.R;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 
@@ -77,5 +84,35 @@ public class SeasoningThirdFragment extends Fragment {
             System.out.println("leeel3 " + randomIngredientsData);
         }
         return inflater.inflate(R.layout.fragment_seasoning_third, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Button button = (Button) view.findViewById(R.id.seasoning_next_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Resources r = getResources();
+                String name = getActivity().getPackageName();
+                ArrayList<String> seasoningData = new ArrayList<>();
+                for (int i = 1; i< 7; i++) {
+                    EditText seasoning = view.findViewById(r.getIdentifier("seasoning" + i, "id", name));
+                    String seasoningText = String.valueOf(seasoning.getText());
+                    if (StringUtils.isNotEmpty(seasoningText)) {
+                        seasoningData.add(seasoningText);
+                    }
+                }
+
+                Fragment startGameFourthFragment = new StartGameFourthFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                Bundle arguments = new Bundle();
+                arguments.putStringArrayList( "liquidData" , liquidData);
+                arguments.putStringArrayList( "randomIngredientsData" , randomIngredientsData);
+                arguments.putStringArrayList( "seasoningData" , seasoningData);
+                startGameFourthFragment.setArguments(arguments);
+                transaction.replace(R.id.container, startGameFourthFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
     }
 }
