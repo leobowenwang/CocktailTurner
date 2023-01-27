@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cocktailturner.R;
+import com.team5.cocktailturner.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class IngredientsFirstFragment extends Fragment {
