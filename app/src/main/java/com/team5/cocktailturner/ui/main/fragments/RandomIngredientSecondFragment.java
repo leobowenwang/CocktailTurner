@@ -10,13 +10,15 @@ import android.view.ViewGroup;
 
 import com.team5.cocktailturner.R;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link IngredientSecondFragment#newInstance} factory method to
+ * Use the {@link RandomIngredientSecondFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class IngredientSecondFragment extends Fragment {
+public class RandomIngredientSecondFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +29,7 @@ public class IngredientSecondFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public IngredientSecondFragment() {
+    public RandomIngredientSecondFragment() {
         // Required empty public constructor
     }
 
@@ -40,8 +42,8 @@ public class IngredientSecondFragment extends Fragment {
      * @return A new instance of fragment IngredientSecondFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static IngredientSecondFragment newInstance(String param1, String param2) {
-        IngredientSecondFragment fragment = new IngredientSecondFragment();
+    public static RandomIngredientSecondFragment newInstance(String param1, String param2) {
+        RandomIngredientSecondFragment fragment = new RandomIngredientSecondFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,6 +64,11 @@ public class IngredientSecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ingredient_second, container, false);
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            ArrayList<String> liquidData = bundle.getStringArrayList("data");
+            System.out.println("leeel" + liquidData);
+        }
+        return inflater.inflate(R.layout.fragment_randomingredient_second, container, false);
     }
 }

@@ -1,14 +1,24 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.team5.cocktailturner.R;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -63,5 +73,36 @@ public class LiquidFirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_liquid_first, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Button button = (Button) view.findViewById(R.id.liquid_next_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Resources r = getResources();
+                String name = getActivity().getPackageName();
+                ArrayList<String> liquidData = new ArrayList<>();
+                for (int i = 1; i< 7; i++) {
+
+                    EditText liquidIngredient = view.findViewById(r.getIdentifier("liquid" + i, "id", name));
+                    String liquidText = String.valueOf(liquidIngredient.getText());
+                    if (StringUtils.isNotEmpty(liquidText)) {
+                        liquidData.add(liquidText);
+                    }
+                }
+
+
+                Fragment randomIngredientSecondFragment = new RandomIngredientSecondFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                Bundle arguments = new Bundle();
+                arguments.putStringArrayList( "data" , liquidData);
+                randomIngredientSecondFragment.setArguments(arguments);
+                transaction.replace(R.id.container, randomIngredientSecondFragment );
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
     }
 }
