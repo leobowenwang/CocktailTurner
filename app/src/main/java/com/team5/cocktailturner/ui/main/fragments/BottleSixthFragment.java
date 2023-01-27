@@ -8,15 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.cocktailturner.R;
-
+import com.team5.cocktailturner.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LiquidFirstFragment#newInstance} factory method to
+ * Use the {@link BottleSixthFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LiquidFirstFragment extends Fragment {
+public class BottleSixthFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +26,7 @@ public class LiquidFirstFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public LiquidFirstFragment() {
+    public BottleSixthFragment() {
         // Required empty public constructor
     }
 
@@ -37,11 +36,11 @@ public class LiquidFirstFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LiquidFirstFragment.
+     * @return A new instance of fragment BottleSixthFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LiquidFirstFragment newInstance(String param1, String param2) {
-        LiquidFirstFragment fragment = new LiquidFirstFragment();
+    public static BottleSixthFragment newInstance(String param1, String param2) {
+        BottleSixthFragment fragment = new BottleSixthFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,6 +61,6 @@ public class LiquidFirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_liquid_first, container, false);
+        return inflater.inflate(R.layout.fragment_bottle_sixth, container, false);
     }
 }
