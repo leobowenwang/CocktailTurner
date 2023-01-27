@@ -5,9 +5,11 @@
     tools:context="com.team5.cocktailturner.ui.main.fragments.LiquidFirstFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add Liquid Ingredient"
+        android:inputType="phone" />
 
 </FrameLayout>
