@@ -13,8 +13,11 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.cocktailturner.MainActivity;
 import com.example.cocktailturner.R;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -56,6 +59,18 @@ public class MainFragment extends Fragment {
             @Override public void afterTextChanged(Editable editable) {
             }
         });
+
+        ImageView imgFavorite = (ImageView) view.findViewById(R.id.imageView);
+        imgFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),
+                        "Klick zum nächsten Screen",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+
 
 }
