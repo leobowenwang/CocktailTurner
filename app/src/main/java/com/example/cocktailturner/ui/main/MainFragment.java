@@ -1,5 +1,6 @@
 package com.example.cocktailturner.ui.main;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -33,7 +34,6 @@ public class MainFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        mViewModel.setName("Test");
         // TODO: Use the ViewModel
     }
 
@@ -44,29 +44,23 @@ public class MainFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
-    @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextInputEditText nameEditText = view.findViewById(R.id.textInputTextName);
-        TextView showText = view.findViewById(R.id.showText);
-        // Add Text Watcher on name input text
-        nameEditText.addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                mViewModel.setName(charSequence.toString());
-                showText.setText(charSequence.toString());
-            }
-            @Override public void afterTextChanged(Editable editable) {
-            }
-        });
 
-        ImageView imgFavorite = (ImageView) view.findViewById(R.id.imageView);
-        imgFavorite.setOnClickListener(new View.OnClickListener() {
+        ImageView logo = (ImageView) view.findViewById(R.id.logo);
+        logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(),
                         "Klick zum nächsten Screen",
                         Toast.LENGTH_LONG).show();
+                Fragment ingredientsFirstFragment = new IngredientsFirstFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, ingredientsFirstFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+
             }
         });
     }

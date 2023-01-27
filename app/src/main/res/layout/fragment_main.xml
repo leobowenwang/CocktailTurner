@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     >
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
@@ -20,41 +20,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Name"
-            />
-
-        <TextView
-            android:id="@+id/showText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="177dp"
-            android:layout_marginBottom="501dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-            tools:text="Test123" />
-    </com.google.android.material.textfield.TextInputLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
