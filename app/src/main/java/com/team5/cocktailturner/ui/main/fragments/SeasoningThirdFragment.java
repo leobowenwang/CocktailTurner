@@ -1,4 +1,4 @@
-package com.example.cocktailturner.ui.main.fragments;
+package com.team5.cocktailturner.ui.main.fragments;
 
 import android.os.Bundle;
 

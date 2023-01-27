@@ -1,4 +1,4 @@
-package com.example.cocktailturner.ui.main;
+package com.team5.cocktailturner.ui.main;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -6,9 +6,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

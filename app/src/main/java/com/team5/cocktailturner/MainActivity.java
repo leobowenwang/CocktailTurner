@@ -1,10 +1,11 @@
-package com.example.cocktailturner;
+package com.team5.cocktailturner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.cocktailturner.ui.main.MainFragment;
+import com.example.cocktailturner.R;
+import com.team5.cocktailturner.ui.main.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 

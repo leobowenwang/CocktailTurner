@@ -1,4 +1,4 @@
-package com.example.cocktailturner.ui.main;
+package com.team5.cocktailturner.ui.main;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
