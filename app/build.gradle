@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.cocktailturner'
+    namespace 'com.team5.cocktailturner'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.cocktailturner"
+        applicationId "com.team5.cocktailturner"
         minSdk 26
         targetSdk 33
         versionCode 1
