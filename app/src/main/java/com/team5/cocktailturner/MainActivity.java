@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.team5.cocktailturner.ui.main.MainFragment;
+import com.team5.cocktailturner.ui.main.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 

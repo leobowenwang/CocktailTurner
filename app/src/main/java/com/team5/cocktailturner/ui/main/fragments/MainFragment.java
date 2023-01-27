@@ -1,4 +1,4 @@
-package com.team5.cocktailturner.ui.main;
+package com.team5.cocktailturner.ui.main.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.team5.cocktailturner.R;
-import com.team5.cocktailturner.ui.main.fragments.LiquidFirstFragment;
+import com.team5.cocktailturner.ui.main.MainViewModel;
 
 
 public class MainFragment extends Fragment {

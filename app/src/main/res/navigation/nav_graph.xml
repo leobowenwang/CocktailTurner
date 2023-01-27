@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.team5.cocktailturner.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/liquidFirstFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.LiquidFirstFragment"
+        android:label="fragment_liquid_first"
+        tools:layout="@layout/fragment_liquid_first" >
+        <action
+            android:id="@+id/action_liquidFirstFragment_to_ingredientSecondFragment"
+            app:destination="@id/ingredientSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientSecondFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.IngredientSecondFragment"
+        android:label="fragment_ingredient_second"
+        tools:layout="@layout/fragment_ingredient_second" >
+        <action
+            android:id="@+id/action_ingredientSecondFragment_to_seasoningThirdFragment"
+            app:destination="@id/seasoningThirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startGameFifthFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.StartGameFifthFragment"
+        android:label="fragment_startgame_fifth"
+        tools:layout="@layout/fragment_startgame_fifth" >
+        <action
+            android:id="@+id/action_startGameFifthFragment_to_bottleSixthFragment"
+            app:destination="@id/bottleSixthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mixCocktailSeventhFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.MixCocktailSeventhFragment"
+        android:label="fragment_mixcocktail_seventh"
+        tools:layout="@layout/fragment_mixcocktail_seventh" >
+        <action
+            android:id="@+id/action_mixCocktailSeventhFragment_to_showCocktailEighthFragment"
+            app:destination="@id/showCocktailEighthFragment" />
+        <action
+            android:id="@+id/action_mixCocktailSeventhFragment_to_bottleSixthFragment2"
+            app:destination="@id/bottleSixthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottleSixthFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.BottleSixthFragment"
+        android:label="fragment_bottle_sixth"
+        tools:layout="@layout/fragment_bottle_sixth" >
+        <action
+            android:id="@+id/action_bottleSixthFragment_to_mixCocktailSeventhFragment"
+            app:destination="@id/mixCocktailSeventhFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seasoningThirdFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.SeasoningThirdFragment"
+        android:label="fragment_seasoning_third"
+        tools:layout="@layout/fragment_seasoning_third" >
+        <action
+            android:id="@+id/action_seasoningThirdFragment_to_startGameFifthFragment"
+            app:destination="@id/startGameFifthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showCocktailEighthFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.ShowCocktailEighthFragment"
+        android:label="fragment_showcocktail_eighth"
+        tools:layout="@layout/fragment_showcocktail_eighth" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_liquidFirstFragment"
+            app:destination="@id/liquidFirstFragment" />
+    </fragment>
+</navigation>
