@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.team5.cocktailturner.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link LiquidFirstFragment#newInstance} factory method to

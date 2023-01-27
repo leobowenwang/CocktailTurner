@@ -14,6 +14,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.team5.cocktailturner.R;
+import com.team5.cocktailturner.ui.main.fragments.LiquidFirstFragment;
+
 
 public class MainFragment extends Fragment {
 
@@ -48,9 +50,9 @@ public class MainFragment extends Fragment {
                 Toast.makeText(getActivity(),
                         "Klick zum nächsten Screen",
                         Toast.LENGTH_LONG).show();
-                Fragment ingredientsFirstFragment = new IngredientsFirstFragment();
+                Fragment liquidFirstFragment = new LiquidFirstFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, ingredientsFirstFragment ); // give your fragment container id in first parameter
+                transaction.replace(R.id.container, liquidFirstFragment ); // give your fragment container id in first parameter
                 transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
                 transaction.commit();
 
