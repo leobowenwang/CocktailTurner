@@ -17,7 +17,6 @@ import java.util.Random;
 
 public class MixCocktailSixthFragment extends Fragment {
 
-
     private static String liquidText;
 
     private static String randomText;
@@ -43,12 +42,12 @@ public class MixCocktailSixthFragment extends Fragment {
             ArrayList<String> ingredientsData = bundle.getStringArrayList("ingredientsData");
             ArrayList<String> seasoningData = bundle.getStringArrayList("seasoningData");
 
-            Random r = new Random();
-            liquidText = liquidData.get(r.nextInt(liquidData.size()));
-            r = new Random();
-            randomText = ingredientsData.get(r.nextInt(ingredientsData.size()));
-            r = new Random();
-            seasoningText = seasoningData.get(r.nextInt(seasoningData.size()));
+            Random random = new Random();
+            liquidText = liquidData.get(random.nextInt(liquidData.size()));
+            random = new Random();
+            randomText = ingredientsData.get(random.nextInt(ingredientsData.size()));
+            random = new Random();
+            seasoningText = seasoningData.get(random.nextInt(seasoningData.size()));
         }
         return inflater.inflate(R.layout.fragment_mixcocktail_sixth, container, false);
     }

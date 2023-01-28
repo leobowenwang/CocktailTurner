@@ -17,7 +17,6 @@ import com.team5.cocktailturner.ui.main.MainViewModel;
 
 
 public class MainFragment extends Fragment {
-
     private MainViewModel mViewModel;
 
     public static MainFragment newInstance() {
@@ -47,14 +46,13 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 Fragment liquidFirstFragment = new LiquidFirstFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, liquidFirstFragment );
+                transaction.replace(R.id.container, liquidFirstFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
 
             }
         });
     }
-
 
 
 }

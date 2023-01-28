@@ -59,19 +59,15 @@ public class BottleFifthFragment extends Fragment {
         Button button = view.findViewById(R.id.createCocktail);
 
         bottle = view.findViewById(R.id.bottle);
-        bottle.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                spinBottle(v);
-            }
-        });
+        bottle.setOnClickListener(v -> spinBottle(v));
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
-                arguments.putStringArrayList( "liquidData" , liquidData);
-                arguments.putStringArrayList( "ingredientsData" , ingredientsData);
-                arguments.putStringArrayList( "seasoningData" , seasoningData);
+                arguments.putStringArrayList("liquidData", liquidData);
+                arguments.putStringArrayList("ingredientsData", ingredientsData);
+                arguments.putStringArrayList("seasoningData", seasoningData);
                 mixCocktailSixthFragment.setArguments(arguments);
                 transaction.replace(R.id.container, mixCocktailSixthFragment);
                 transaction.addToBackStack(null);
@@ -80,6 +76,7 @@ public class BottleFifthFragment extends Fragment {
         });
 
     }
+
     public void spinBottle(View v) {
         if (!spinning) {
             int newDir = random.nextInt(1800);
