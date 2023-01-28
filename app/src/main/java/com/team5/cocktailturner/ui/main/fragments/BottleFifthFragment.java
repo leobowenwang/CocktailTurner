@@ -31,6 +31,13 @@ public class BottleFifthFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private static ArrayList<String> liquidData;
+
+    private static ArrayList<String> randomIngredientsData;
+
+    private static ArrayList<String> seasoningData;
+
+
     private ImageView bottle;
     private Random random = new Random();
     private int lastDir;
@@ -57,7 +64,7 @@ public class BottleFifthFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+/*
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         bottle = view.findViewById(R.id.bottle);
@@ -73,7 +80,45 @@ public class BottleFifthFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_bottle_fifth, container, false);
     }
+*/
 
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            liquidData = bundle.getStringArrayList("liquidData");
+            randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            seasoningData = bundle.getStringArrayList("seasoningData");
+            //todo remove
+            System.out.println("leeel5 " + liquidData);
+            System.out.println("leeel5 " + randomIngredientsData);
+            System.out.println("leeel5 " + seasoningData);
+        }
+        return inflater.inflate(R.layout.fragment_bottle_fifth, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Button button = (Button) view.findViewById(R.id.createCocktail);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                Bundle arguments = new Bundle();
+                arguments.putStringArrayList( "liquidData" , liquidData);
+                arguments.putStringArrayList( "randomIngredientsData" , randomIngredientsData);
+                arguments.putStringArrayList( "seasoningData" , seasoningData);
+                mixCocktailSixthFragment.setArguments(arguments);
+                transaction.replace(R.id.container, mixCocktailSixthFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+    }
     public void spinBottle(View v) {
         if (!spinning) {
             int newDir = random.nextInt(1800);
