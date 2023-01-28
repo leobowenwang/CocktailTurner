@@ -20,8 +20,6 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 
 public class IngredientSecondFragment extends Fragment {
-
-
     private static ArrayList<String> liquidData;
 
     public IngredientSecondFragment() {
@@ -47,38 +45,36 @@ public class IngredientSecondFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Button button = view.findViewById(R.id.ingredient_next_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                EditText editField = view.findViewById(R.id.ingredient1);
-                String editText = "";
-                editText = editField.getText().toString();
-                if (editText.matches("")) {
-                    Toast.makeText(getActivity(),
-                            "first ingredient is required",
-                            Toast.LENGTH_LONG).show();
-                    return;
-                }
-                Resources r = getResources();
-                String name = getActivity().getPackageName();
-                ArrayList<String> ingredientsData = new ArrayList<>();
-                for (int i = 1; i< 7; i++) {
-                    EditText ingredient = view.findViewById(r.getIdentifier("ingredient" + i, "id", name));
-                    String ingredientText = String.valueOf(ingredient.getText());
-                    if (StringUtils.isNotEmpty(ingredientText)) {
-                        ingredientsData.add(ingredientText);
-                    }
-                }
-
-                Fragment seasoningThirdFragment = new SeasoningThirdFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                Bundle arguments = new Bundle();
-                arguments.putStringArrayList( "liquidData" , liquidData);
-                arguments.putStringArrayList( "ingredientsData" , ingredientsData);
-                seasoningThirdFragment.setArguments(arguments);
-                transaction.replace(R.id.container, seasoningThirdFragment );
-                transaction.addToBackStack(null);
-                transaction.commit();
+        button.setOnClickListener(v -> {
+            EditText editField = view.findViewById(R.id.ingredient1);
+            String editText = "";
+            editText = editField.getText().toString();
+            if (editText.matches("")) {
+                Toast.makeText(getActivity(),
+                        "first ingredient is required",
+                        Toast.LENGTH_LONG).show();
+                return;
             }
+            Resources r = getResources();
+            String name = getActivity().getPackageName();
+            ArrayList<String> ingredientsData = new ArrayList<>();
+            for (int i = 1; i < 7; i++) {
+                EditText ingredient = view.findViewById(r.getIdentifier("ingredient" + i, "id", name));
+                String ingredientText = String.valueOf(ingredient.getText());
+                if (StringUtils.isNotEmpty(ingredientText)) {
+                    ingredientsData.add(ingredientText);
+                }
+            }
+
+            Fragment seasoningThirdFragment = new SeasoningThirdFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            Bundle arguments = new Bundle();
+            arguments.putStringArrayList("liquidData", liquidData);
+            arguments.putStringArrayList("ingredientsData", ingredientsData);
+            seasoningThirdFragment.setArguments(arguments);
+            transaction.replace(R.id.container, seasoningThirdFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
     }
 }

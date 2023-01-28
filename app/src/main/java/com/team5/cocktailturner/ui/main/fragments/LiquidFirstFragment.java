@@ -48,38 +48,36 @@ public class LiquidFirstFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Button button = view.findViewById(R.id.liquid_next_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                EditText editField = view.findViewById(R.id.liquid1);
-                String editText = "";
-                editText = editField.getText().toString();
-                if (editText.matches("")) {
-                    Toast.makeText(getActivity(),
-                            "first ingredient is required",
-                            Toast.LENGTH_LONG).show();
-                    return;
-                }
-
-                Resources r = getResources();
-                String name = getActivity().getPackageName();
-                ArrayList<String> liquidData = new ArrayList<>();
-                for (int i = 1; i< 7; i++) {
-                    EditText liquidIngredient = view.findViewById(r.getIdentifier("liquid" + i, "id", name));
-                    String liquidText = String.valueOf(liquidIngredient.getText());
-                    if (StringUtils.isNotEmpty(liquidText)) {
-                        liquidData.add(liquidText);
-                    }
-                }
-
-                Fragment ingredientSecondFragment = new IngredientSecondFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                Bundle arguments = new Bundle();
-                arguments.putStringArrayList( "liquidData" , liquidData);
-                ingredientSecondFragment.setArguments(arguments);
-                transaction.replace(R.id.container, ingredientSecondFragment );
-                transaction.addToBackStack(null);
-                transaction.commit();
+        button.setOnClickListener(v -> {
+            EditText editField = view.findViewById(R.id.liquid1);
+            String editText = "";
+            editText = editField.getText().toString();
+            if (editText.matches("")) {
+                Toast.makeText(getActivity(),
+                        "first ingredient is required",
+                        Toast.LENGTH_LONG).show();
+                return;
             }
+
+            Resources r = getResources();
+            String name = getActivity().getPackageName();
+            ArrayList<String> liquidData = new ArrayList<>();
+            for (int i = 1; i < 7; i++) {
+                EditText liquidIngredient = view.findViewById(r.getIdentifier("liquid" + i, "id", name));
+                String liquidText = String.valueOf(liquidIngredient.getText());
+                if (StringUtils.isNotEmpty(liquidText)) {
+                    liquidData.add(liquidText);
+                }
+            }
+
+            Fragment ingredientSecondFragment = new IngredientSecondFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            Bundle arguments = new Bundle();
+            arguments.putStringArrayList("liquidData", liquidData);
+            ingredientSecondFragment.setArguments(arguments);
+            transaction.replace(R.id.container, ingredientSecondFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
     }
 }
