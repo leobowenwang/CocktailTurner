@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/cocktail_pink</item>
+        <item name="android:colorPrimaryDark">@color/cocktail_pink</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>
