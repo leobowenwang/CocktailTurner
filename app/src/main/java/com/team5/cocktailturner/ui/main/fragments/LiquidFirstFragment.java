@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.team5.cocktailturner.R;
 
@@ -81,6 +82,16 @@ public class LiquidFirstFragment extends Fragment {
         Button button = (Button) view.findViewById(R.id.liquid_next_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                EditText editField = (EditText) view.findViewById(R.id.liquid1);
+                String editText = "";
+                editText = editField.getText().toString();
+                if (editText.matches("")) {
+                    Toast.makeText(getActivity(),
+                            "first ingredient is required",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 Resources r = getResources();
                 String name = getActivity().getPackageName();
                 ArrayList<String> liquidData = new ArrayList<>();

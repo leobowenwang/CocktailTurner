@@ -49,8 +49,8 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 Fragment liquidFirstFragment = new LiquidFirstFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, liquidFirstFragment ); // give your fragment container id in first parameter
-                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.replace(R.id.container, liquidFirstFragment );
+                transaction.addToBackStack(null);
                 transaction.commit();
 
             }
