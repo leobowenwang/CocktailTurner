@@ -41,17 +41,11 @@ public class BottleFifthFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static BottleFifthFragment newInstance(String param1, String param2) {
-        BottleFifthFragment fragment = new BottleFifthFragment();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

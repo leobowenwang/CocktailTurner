@@ -38,11 +38,6 @@ public class SeasoningThirdFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static SeasoningThirdFragment newInstance(String param1, String param2) {
-        SeasoningThirdFragment fragment = new SeasoningThirdFragment();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

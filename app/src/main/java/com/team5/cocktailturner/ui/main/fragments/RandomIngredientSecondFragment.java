@@ -29,10 +29,6 @@ public class RandomIngredientSecondFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static RandomIngredientSecondFragment newInstance(String param1, String param2) {
-        RandomIngredientSecondFragment fragment = new RandomIngredientSecondFragment();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

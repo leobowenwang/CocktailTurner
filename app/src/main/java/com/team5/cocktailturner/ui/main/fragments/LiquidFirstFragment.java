@@ -32,11 +32,6 @@ public class LiquidFirstFragment extends Fragment {
     }
 
 
-    public static LiquidFirstFragment newInstance(String param1, String param2) {
-        LiquidFirstFragment fragment = new LiquidFirstFragment();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

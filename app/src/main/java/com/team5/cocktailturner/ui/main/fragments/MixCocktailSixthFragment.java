@@ -17,11 +17,6 @@ public class MixCocktailSixthFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static MixCocktailSixthFragment newInstance(String param1, String param2) {
-        MixCocktailSixthFragment fragment = new MixCocktailSixthFragment();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
