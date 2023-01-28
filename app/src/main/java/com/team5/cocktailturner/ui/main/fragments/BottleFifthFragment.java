@@ -103,6 +103,13 @@ public class BottleFifthFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Button button = (Button) view.findViewById(R.id.createCocktail);
+
+        bottle = view.findViewById(R.id.bottle);
+        bottle.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                spinBottle(v);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
