@@ -47,9 +47,6 @@ public class MainFragment extends Fragment {
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),
-                        "Klick zum nächsten Screen",
-                        Toast.LENGTH_LONG).show();
                 Fragment liquidFirstFragment = new LiquidFirstFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.container, liquidFirstFragment ); // give your fragment container id in first parameter
