@@ -48,16 +48,24 @@ public class MixCocktailSixthFragment extends Fragment {
         // Inflate the layout for this fragment
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            ArrayList<String> liquidData = bundle.getStringArrayList("liquidData");
-            ArrayList<String> ingredientsData = bundle.getStringArrayList("ingredientsData");
-            ArrayList<String> seasoningData = bundle.getStringArrayList("seasoningData");
+
+
+            liquidData = bundle.getStringArrayList("liquidData");
+            ingredientsData = bundle.getStringArrayList("ingredientsData");
+            seasoningData = bundle.getStringArrayList("seasoningData");
+
+
+            ArrayList<String> liquidDataRandom = bundle.getStringArrayList("liquidData");
+            ArrayList<String> ingredientsDataRandom = bundle.getStringArrayList("ingredientsData");
+            ArrayList<String> seasoningDataRandom = bundle.getStringArrayList("seasoningData");
 
             Random random = new Random();
-            liquidText = liquidData.get(random.nextInt(liquidData.size()));
+            liquidText = liquidDataRandom.get(random.nextInt(liquidDataRandom.size()));
             random = new Random();
-            randomText = ingredientsData.get(random.nextInt(ingredientsData.size()));
+            randomText = ingredientsDataRandom.get(random.nextInt(ingredientsDataRandom.size()));
             random = new Random();
-            seasoningText = seasoningData.get(random.nextInt(seasoningData.size()));
+            seasoningText = seasoningDataRandom.get(random.nextInt(seasoningDataRandom.size()));
+
         }
         return inflater.inflate(R.layout.fragment_mixcocktail_sixth, container, false);
     }
