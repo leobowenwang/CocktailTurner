@@ -40,13 +40,13 @@ public class MixCocktailSixthFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             ArrayList<String> liquidData = bundle.getStringArrayList("liquidData");
-            ArrayList<String> randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            ArrayList<String> ingredientsData = bundle.getStringArrayList("ingredientsData");
             ArrayList<String> seasoningData = bundle.getStringArrayList("seasoningData");
 
             Random r = new Random();
             liquidText = liquidData.get(r.nextInt(liquidData.size()));
             r = new Random();
-            randomText = randomIngredientsData.get(r.nextInt(randomIngredientsData.size()));
+            randomText = ingredientsData.get(r.nextInt(ingredientsData.size()));
             r = new Random();
             seasoningText = seasoningData.get(r.nextInt(seasoningData.size()));
         }

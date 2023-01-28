@@ -10,83 +10,83 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/randomIngredient1"
+            android:id="@+id/ingredient1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:hint="Add Random Ingredient"
+            android:hint="Add Ingredient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/randomIngredient2"
+            android:id="@+id/ingredient2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Add Random Ingredient (Optional)"
+            android:hint="Add Ingredient (Optional)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient1" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient1" />
 
         <EditText
-            android:id="@+id/randomIngredient3"
+            android:id="@+id/ingredient3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Add Random Ingredient (Optional)"
+            android:hint="Add Ingredient (Optional)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient2" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient2" />
 
         <EditText
-            android:id="@+id/randomIngredient4"
+            android:id="@+id/ingredient4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Add Random Ingredient (Optional)"
+            android:hint="Add Ingredient (Optional)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient3" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient3" />
 
         <EditText
-            android:id="@+id/randomIngredient5"
+            android:id="@+id/ingredient5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Add Random Ingredient (Optional)"
+            android:hint="Add Ingredient (Optional)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient4" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient4" />
 
         <EditText
-            android:id="@+id/randomIngredient6"
+            android:id="@+id/ingredient6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Add Random Ingredient (Optional)"
+            android:hint="Add Ingredient (Optional)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient5" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient5" />
 
         <EditText
-            android:id="@+id/randomIngredient7"
+            android:id="@+id/ingredient7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:hint="Add Random Ingredient (Optional)"
+            android:hint="Add Ingredient (Optional)"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient6" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient6" />
 
         <Button
-            android:id="@+id/random_ingredient_next_button"
+            android:id="@+id/ingredient_next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="296dp"
@@ -96,7 +96,7 @@
             android:text="Next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/randomIngredient7" />
+            app:layout_constraintTop_toBottomOf="@+id/ingredient7" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

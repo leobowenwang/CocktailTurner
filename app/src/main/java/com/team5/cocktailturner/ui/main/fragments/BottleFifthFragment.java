@@ -21,7 +21,7 @@ import java.util.Random;
 public class BottleFifthFragment extends Fragment {
     private static ArrayList<String> liquidData;
 
-    private static ArrayList<String> randomIngredientsData;
+    private static ArrayList<String> ingredientsData;
 
     private static ArrayList<String> seasoningData;
 
@@ -48,7 +48,7 @@ public class BottleFifthFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             liquidData = bundle.getStringArrayList("liquidData");
-            randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            ingredientsData = bundle.getStringArrayList("randomIngredientsData");
             seasoningData = bundle.getStringArrayList("seasoningData");
         }
         return inflater.inflate(R.layout.fragment_bottle_fifth, container, false);
@@ -70,7 +70,7 @@ public class BottleFifthFragment extends Fragment {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
                 arguments.putStringArrayList( "liquidData" , liquidData);
-                arguments.putStringArrayList( "randomIngredientsData" , randomIngredientsData);
+                arguments.putStringArrayList( "randomIngredientsData" , ingredientsData);
                 arguments.putStringArrayList( "seasoningData" , seasoningData);
                 mixCocktailSixthFragment.setArguments(arguments);
                 transaction.replace(R.id.container, mixCocktailSixthFragment);
