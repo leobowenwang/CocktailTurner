@@ -17,11 +17,6 @@ public class ShowCocktailSeventhFragment extends Fragment {
     }
 
 
-    public static ShowCocktailSeventhFragment newInstance(String param1, String param2) {
-        ShowCocktailSeventhFragment fragment = new ShowCocktailSeventhFragment();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

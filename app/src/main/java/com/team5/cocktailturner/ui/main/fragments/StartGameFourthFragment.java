@@ -28,10 +28,6 @@ public class StartGameFourthFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static StartGameFourthFragment newInstance(String param1, String param2) {
-        StartGameFourthFragment fragment = new StartGameFourthFragment();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
