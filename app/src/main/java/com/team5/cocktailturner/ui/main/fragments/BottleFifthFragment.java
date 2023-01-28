@@ -1,9 +1,11 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +13,15 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.team5.cocktailturner.R;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -72,6 +79,11 @@ public class BottleFifthFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         bottle = view.findViewById(R.id.bottle);
+        bottle.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               spinBottle(v);
+            }
+        });
 
     }
     @Override
