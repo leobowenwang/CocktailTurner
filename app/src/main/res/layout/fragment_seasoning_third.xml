@@ -93,7 +93,7 @@
             android:layout_marginStart="296dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="21dp"
-            android:backgroundTint="#EF6167"
+            android:backgroundTint="@color/cocktail_pink"
             android:text="Next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
