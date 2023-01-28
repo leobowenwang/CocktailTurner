@@ -56,10 +56,6 @@ public class BottleFifthFragment extends Fragment {
             liquidData = bundle.getStringArrayList("liquidData");
             randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
             seasoningData = bundle.getStringArrayList("seasoningData");
-            //todo remove
-            System.out.println("leeel5 " + liquidData);
-            System.out.println("leeel5 " + randomIngredientsData);
-            System.out.println("leeel5 " + seasoningData);
         }
         return inflater.inflate(R.layout.fragment_bottle_fifth, container, false);
     }

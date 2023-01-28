@@ -43,10 +43,6 @@ public class StartGameFourthFragment extends Fragment {
             liquidData = bundle.getStringArrayList("liquidData");
             randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
             seasoningData = bundle.getStringArrayList("seasoningData");
-            //todo remove
-            System.out.println("leeel4 " + liquidData);
-            System.out.println("leeel4 " + randomIngredientsData);
-            System.out.println("leeel4 " + seasoningData);
         }
         return inflater.inflate(R.layout.fragment_startgame_fourth, container, false);
     }

@@ -51,9 +51,6 @@ public class SeasoningThirdFragment extends Fragment {
         if (bundle != null) {
             liquidData = bundle.getStringArrayList("liquidData");
             randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
-            //todo remove
-            System.out.println("leeel3 " + liquidData);
-            System.out.println("leeel3 " + randomIngredientsData);
         }
         return inflater.inflate(R.layout.fragment_seasoning_third, container, false);
     }

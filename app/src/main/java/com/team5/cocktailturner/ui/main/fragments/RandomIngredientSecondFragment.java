@@ -41,8 +41,6 @@ public class RandomIngredientSecondFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             liquidData = bundle.getStringArrayList("liquidData");
-            //todo remove
-            System.out.println("leeel2 " + liquidData);
         }
         return inflater.inflate(R.layout.fragment_randomingredient_second, container, false);
     }

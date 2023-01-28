@@ -19,6 +19,13 @@ import java.util.Random;
 
 public class MixCocktailSixthFragment extends Fragment {
 
+
+    private static String liquidText;
+
+    private static String randomText;
+
+    private static String seasoningText;
+
     public MixCocktailSixthFragment() {
         // Required empty public constructor
     }
@@ -37,10 +44,6 @@ public class MixCocktailSixthFragment extends Fragment {
             ArrayList<String> liquidData = bundle.getStringArrayList("liquidData");
             ArrayList<String> randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
             ArrayList<String> seasoningData = bundle.getStringArrayList("seasoningData");
-            //todo remove
-            System.out.println("leeel6 " + liquidData);
-            System.out.println("leeel6 " + randomIngredientsData);
-            System.out.println("leeel6 " + seasoningData);
 
             Random r = new Random();
             liquidText = liquidData.get(r.nextInt(liquidData.size()));
@@ -48,8 +51,6 @@ public class MixCocktailSixthFragment extends Fragment {
             randomText = randomIngredientsData.get(r.nextInt(randomIngredientsData.size()));
             r = new Random();
             seasoningText = seasoningData.get(r.nextInt(seasoningData.size()));
-
-            System.out.println("liquid: " + liquidText + " random: " +  randomText + " seasoning: " + seasoningText);
         }
         return inflater.inflate(R.layout.fragment_mixcocktail_sixth, container, false);
     }
