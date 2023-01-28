@@ -1,15 +1,14 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.team5.cocktailturner.R;
 
@@ -49,7 +48,7 @@ public class StartGameFourthFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.start_game_button);
+        Button button = view.findViewById(R.id.start_game_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Fragment bottleFifthFragment = new BottleFifthFragment();

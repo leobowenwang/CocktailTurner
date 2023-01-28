@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,7 +41,7 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageView logo = (ImageView) view.findViewById(R.id.logo);
+        ImageView logo = view.findViewById(R.id.logo);
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

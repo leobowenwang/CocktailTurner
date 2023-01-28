@@ -47,10 +47,10 @@ public class LiquidFirstFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.liquid_next_button);
+        Button button = view.findViewById(R.id.liquid_next_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                EditText editField = (EditText) view.findViewById(R.id.liquid1);
+                EditText editField = view.findViewById(R.id.liquid1);
                 String editText = "";
                 editText = editField.getText().toString();
                 if (editText.matches("")) {
@@ -71,7 +71,7 @@ public class LiquidFirstFragment extends Fragment {
                     }
                 }
 
-                Fragment randomIngredientSecondFragment = new RandomIngredientSecondFragment();
+                Fragment randomIngredientSecondFragment = new IngredientSecondFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
                 arguments.putStringArrayList( "liquidData" , liquidData);

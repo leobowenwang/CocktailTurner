@@ -1,15 +1,13 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.team5.cocktailturner.R;
 
@@ -57,9 +55,9 @@ public class MixCocktailSixthFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        TextView liquid = (TextView) view.findViewById(R.id.alcoholIngredient);
-        TextView random = (TextView) view.findViewById(R.id.randomIngredient);
-        TextView seasoning = (TextView) view.findViewById(R.id.seasoningIngredient);
+        TextView liquid = view.findViewById(R.id.alcoholIngredient);
+        TextView random = view.findViewById(R.id.randomIngredient);
+        TextView seasoning = view.findViewById(R.id.seasoningIngredient);
 
         liquid.setText(liquidText);
         random.setText(randomText);

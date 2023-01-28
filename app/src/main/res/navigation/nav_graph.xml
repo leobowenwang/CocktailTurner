@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/ingredientSecondFragment"
-        android:name="com.team5.cocktailturner.ui.main.fragments.RandomIngredientSecondFragment"
+        android:name="com.team5.cocktailturner.ui.main.fragments.IngredientSecondFragment"
         android:label="fragment_ingredient_second"
         tools:layout="@layout/fragment_ingredient_second" >
         <action

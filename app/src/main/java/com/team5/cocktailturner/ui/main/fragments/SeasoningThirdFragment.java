@@ -2,17 +2,16 @@ package com.team5.cocktailturner.ui.main.fragments;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.team5.cocktailturner.R;
 
@@ -57,10 +56,10 @@ public class SeasoningThirdFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.seasoning_next_button);
+        Button button = view.findViewById(R.id.seasoning_next_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                EditText editField = (EditText) view.findViewById(R.id.seasoning1);
+                EditText editField = view.findViewById(R.id.seasoning1);
                 String editText = "";
                 editText = editField.getText().toString();
                 if (editText.matches("")) {

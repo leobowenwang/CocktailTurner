@@ -2,11 +2,6 @@ package com.team5.cocktailturner.ui.main.fragments;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.team5.cocktailturner.R;
 
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 
-public class RandomIngredientSecondFragment extends Fragment {
+public class IngredientSecondFragment extends Fragment {
 
 
     private static ArrayList<String> liquidData;
 
-    public RandomIngredientSecondFragment() {
+    public IngredientSecondFragment() {
         // Required empty public constructor
     }
 
@@ -42,15 +41,15 @@ public class RandomIngredientSecondFragment extends Fragment {
         if (bundle != null) {
             liquidData = bundle.getStringArrayList("liquidData");
         }
-        return inflater.inflate(R.layout.fragment_randomingredient_second, container, false);
+        return inflater.inflate(R.layout.fragment_ingredient_second, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.random_ingredient_next_button);
+        Button button = view.findViewById(R.id.random_ingredient_next_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                EditText editField = (EditText) view.findViewById(R.id.randomIngredient1);
+                EditText editField = view.findViewById(R.id.randomIngredient1);
                 String editText = "";
                 editText = editField.getText().toString();
                 if (editText.matches("")) {
