@@ -46,8 +46,7 @@ public class BottleFifthFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Bundle bundle = this.getArguments();
         if (bundle != null) {
@@ -65,22 +64,34 @@ public class BottleFifthFragment extends Fragment {
         bottle = view.findViewById(R.id.bottle);
         bottle.setOnClickListener(this::spinBottle);
         button.setOnClickListener(v -> {
-            bottle.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake));
             Vibrator vibrator = (Vibrator) requireContext().getSystemService(Context.VIBRATOR_SERVICE);
             vibrator.vibrate(VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE));
+            Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.shake);
+            bottle.startAnimation(animation);
+            animation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                }
 
-            Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            Bundle arguments = new Bundle();
-            arguments.putStringArrayList("liquidData", liquidData);
-            arguments.putStringArrayList("ingredientsData", ingredientsData);
-            arguments.putStringArrayList("seasoningData", seasoningData);
-            mixCocktailSixthFragment.setArguments(arguments);
-            transaction.replace(R.id.container, mixCocktailSixthFragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    Bundle arguments = new Bundle();
+                    arguments.putStringArrayList("liquidData", liquidData);
+                    arguments.putStringArrayList("ingredientsData", ingredientsData);
+                    arguments.putStringArrayList("seasoningData", seasoningData);
+                    mixCocktailSixthFragment.setArguments(arguments);
+                    transaction.replace(R.id.container, mixCocktailSixthFragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                }
+            });
         });
-
     }
 
     public void spinBottle(View v) {
