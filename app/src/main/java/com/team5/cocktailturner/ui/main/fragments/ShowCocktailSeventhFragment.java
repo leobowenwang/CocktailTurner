@@ -12,11 +12,6 @@ import com.team5.cocktailturner.R;
 
 public class ShowCocktailSeventhFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
-
     public ShowCocktailSeventhFragment() {
         // Required empty public constructor
     }
@@ -24,20 +19,12 @@ public class ShowCocktailSeventhFragment extends Fragment {
 
     public static ShowCocktailSeventhFragment newInstance(String param1, String param2) {
         ShowCocktailSeventhFragment fragment = new ShowCocktailSeventhFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
