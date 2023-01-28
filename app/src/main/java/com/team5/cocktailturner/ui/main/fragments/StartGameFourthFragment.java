@@ -1,6 +1,5 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -11,12 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.team5.cocktailturner.R;
-
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 
@@ -76,12 +71,27 @@ public class StartGameFourthFragment extends Fragment {
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            liquidData = bundle.getStringArrayList("liquidData");
+            randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            seasoningData = bundle.getStringArrayList("seasoningData");
+            //todo remove
+            System.out.println("leeel4 " + liquidData);
+            System.out.println("leeel4 " + randomIngredientsData);
+            System.out.println("leeel4 " + seasoningData);
+        }
+        return inflater.inflate(R.layout.fragment_startgame_fourth, container, false);
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) view.findViewById(R.id.startGamebtn);
+        Button button = (Button) view.findViewById(R.id.start_game_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
                 Fragment bottleFifthFragment = new BottleFifthFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();

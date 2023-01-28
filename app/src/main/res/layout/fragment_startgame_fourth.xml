@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/startGamebtn"
+            android:id="@+id/start_game_button"
             android:layout_width="222dp"
             android:layout_height="142dp"
             android:layout_marginStart="97dp"
