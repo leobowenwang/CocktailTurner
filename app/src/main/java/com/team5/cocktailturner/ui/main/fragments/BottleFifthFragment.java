@@ -1,10 +1,14 @@
 package com.team5.cocktailturner.ui.main.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -59,20 +63,22 @@ public class BottleFifthFragment extends Fragment {
         Button button = view.findViewById(R.id.createCocktail);
 
         bottle = view.findViewById(R.id.bottle);
-        bottle.setOnClickListener(v -> spinBottle(v));
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                Bundle arguments = new Bundle();
-                arguments.putStringArrayList("liquidData", liquidData);
-                arguments.putStringArrayList("ingredientsData", ingredientsData);
-                arguments.putStringArrayList("seasoningData", seasoningData);
-                mixCocktailSixthFragment.setArguments(arguments);
-                transaction.replace(R.id.container, mixCocktailSixthFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
+        bottle.setOnClickListener(this::spinBottle);
+        button.setOnClickListener(v -> {
+            bottle.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.shake));
+            Vibrator vibrator = (Vibrator) requireContext().getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE));
+
+            Fragment mixCocktailSixthFragment = new MixCocktailSixthFragment();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            Bundle arguments = new Bundle();
+            arguments.putStringArrayList("liquidData", liquidData);
+            arguments.putStringArrayList("ingredientsData", ingredientsData);
+            arguments.putStringArrayList("seasoningData", seasoningData);
+            mixCocktailSixthFragment.setArguments(arguments);
+            transaction.replace(R.id.container, mixCocktailSixthFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
 
     }
