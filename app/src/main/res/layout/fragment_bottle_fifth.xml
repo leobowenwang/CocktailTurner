@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.fragments.BottleFifthFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,6 +18,7 @@
             android:layout_marginStart="168dp"
             android:layout_marginEnd="149dp"
             android:layout_marginBottom="24dp"
+            android:backgroundTint="#EF6167"
             android:text="create Cocktail"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
