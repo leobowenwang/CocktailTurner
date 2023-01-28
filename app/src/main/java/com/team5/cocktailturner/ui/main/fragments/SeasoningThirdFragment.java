@@ -30,7 +30,7 @@ public class SeasoningThirdFragment extends Fragment {
 
     private static ArrayList<String> liquidData;
 
-    private static ArrayList<String> randomIngredientsData;
+    private static ArrayList<String> ingredientsData;
 
 
     public SeasoningThirdFragment() {
@@ -49,7 +49,7 @@ public class SeasoningThirdFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             liquidData = bundle.getStringArrayList("liquidData");
-            randomIngredientsData = bundle.getStringArrayList("randomIngredientsData");
+            ingredientsData = bundle.getStringArrayList("ingredientsData");
         }
         return inflater.inflate(R.layout.fragment_seasoning_third, container, false);
     }
@@ -83,7 +83,7 @@ public class SeasoningThirdFragment extends Fragment {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
                 arguments.putStringArrayList( "liquidData" , liquidData);
-                arguments.putStringArrayList( "randomIngredientsData" , randomIngredientsData);
+                arguments.putStringArrayList( "ingredientsData" , ingredientsData);
                 arguments.putStringArrayList( "seasoningData" , seasoningData);
                 startGameFourthFragment.setArguments(arguments);
                 transaction.replace(R.id.container, startGameFourthFragment);

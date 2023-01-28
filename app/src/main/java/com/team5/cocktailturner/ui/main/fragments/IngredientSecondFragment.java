@@ -46,10 +46,10 @@ public class IngredientSecondFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = view.findViewById(R.id.random_ingredient_next_button);
+        Button button = view.findViewById(R.id.ingredient_next_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                EditText editField = view.findViewById(R.id.randomIngredient1);
+                EditText editField = view.findViewById(R.id.ingredient1);
                 String editText = "";
                 editText = editField.getText().toString();
                 if (editText.matches("")) {
@@ -60,12 +60,12 @@ public class IngredientSecondFragment extends Fragment {
                 }
                 Resources r = getResources();
                 String name = getActivity().getPackageName();
-                ArrayList<String> randomIngredientsData = new ArrayList<>();
+                ArrayList<String> ingredientsData = new ArrayList<>();
                 for (int i = 1; i< 7; i++) {
-                    EditText randomIngredient = view.findViewById(r.getIdentifier("randomIngredient" + i, "id", name));
-                    String randomIngredientText = String.valueOf(randomIngredient.getText());
-                    if (StringUtils.isNotEmpty(randomIngredientText)) {
-                        randomIngredientsData.add(randomIngredientText);
+                    EditText ingredient = view.findViewById(r.getIdentifier("ingredient" + i, "id", name));
+                    String ingredientText = String.valueOf(ingredient.getText());
+                    if (StringUtils.isNotEmpty(ingredientText)) {
+                        ingredientsData.add(ingredientText);
                     }
                 }
 
@@ -73,7 +73,7 @@ public class IngredientSecondFragment extends Fragment {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
                 arguments.putStringArrayList( "liquidData" , liquidData);
-                arguments.putStringArrayList( "randomIngredientsData" , randomIngredientsData);
+                arguments.putStringArrayList( "ingredientsData" , ingredientsData);
                 seasoningThirdFragment.setArguments(arguments);
                 transaction.replace(R.id.container, seasoningThirdFragment );
                 transaction.addToBackStack(null);

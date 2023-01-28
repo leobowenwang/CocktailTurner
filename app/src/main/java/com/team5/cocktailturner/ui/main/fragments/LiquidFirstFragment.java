@@ -71,12 +71,12 @@ public class LiquidFirstFragment extends Fragment {
                     }
                 }
 
-                Fragment randomIngredientSecondFragment = new IngredientSecondFragment();
+                Fragment ingredientSecondFragment = new IngredientSecondFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 Bundle arguments = new Bundle();
                 arguments.putStringArrayList( "liquidData" , liquidData);
-                randomIngredientSecondFragment.setArguments(arguments);
-                transaction.replace(R.id.container, randomIngredientSecondFragment );
+                ingredientSecondFragment.setArguments(arguments);
+                transaction.replace(R.id.container, ingredientSecondFragment );
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
