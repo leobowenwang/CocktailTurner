@@ -7,8 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 
 import com.team5.cocktailturner.R;
+
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +30,11 @@ public class BottleFifthFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ImageView bottle;
+    private Random random = new Random();
+    private int lastDir;
+    private boolean spinning;
 
     public BottleFifthFragment() {
         // Required empty public constructor
@@ -55,6 +65,7 @@ public class BottleFifthFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        bottle = bottle.findViewById(R.id.bottle);
     }
 
     @Override
@@ -62,5 +73,36 @@ public class BottleFifthFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bottle_fifth, container, false);
+    }
+
+    public void spinBottle(View v) {
+        if (!spinning) {
+            int newDir = random.nextInt(1800);
+            float pivotX = bottle.getWidth() / 2;
+            float pivotY = bottle.getHeight() / 2;
+
+            Animation rotate = new RotateAnimation(lastDir, newDir, pivotX, pivotY);
+            rotate.setDuration(2500);
+            rotate.setFillAfter(true);
+            rotate.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    spinning = true;
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    spinning = false;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+
+            lastDir = newDir;
+            bottle.startAnimation(rotate);
+        }
     }
 }
